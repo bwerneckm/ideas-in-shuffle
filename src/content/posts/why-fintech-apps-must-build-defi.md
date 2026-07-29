@@ -8,8 +8,6 @@ excerpt: "Hey builders,"
 cover: "darlington"
 ---
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/38e3d46a-8c0a-4ad2-8076-179e570dbba6_2816x1536.png)
-
 Hey builders,
 
 I’ve been watching fintech companies make the same expensive mistake over and over again—and it’s costing them millions in rebuilds, years in delays, and massive competitive advantages to smarter competitors.

@@ -12,8 +12,6 @@ cover: "bone"
 
 *How tokenized stocks will do for investing what stablecoins did for dollars*
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/8609e4f6-d968-4885-b154-8a01891ad205_2816x1536.png)
-
 ---
 
 Stablecoins proved something most people missed: you can decouple access from infrastructure.

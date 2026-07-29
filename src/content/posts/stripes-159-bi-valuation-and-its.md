@@ -8,8 +8,6 @@ excerpt: "The four-layer money stack that changes everything. How a $1.2B bet an
 cover: "seafoam"
 ---
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/8f479fc4-fe1f-4ae5-b9a7-64fa4258b276_2816x1536.png)
-
 Stripe is in the news (again). With another bump in their valuation, the company is now privately valued at $159 billion. The news comes when their new strategy is starting to consolidate. Their new stablecoin infrastructure isn’t just another crypto play—it’s a complete reimagining of how money moves in the digital economy.
 
 The proof? In the last 24 months, they spent over $1.2 billion acquiring the pieces: Bridge for $1.1 billion and Privy for hundreds of millions. But here’s what most people missed: they’re also building their own blockchain called Tempo. This isn’t experimentation—it’s execution of a master plan.

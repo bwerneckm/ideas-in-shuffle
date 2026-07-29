@@ -76,6 +76,7 @@ const readerData = openPost
             <a href="/" class="back" style="background:none;border:none;font:inherit;color:var(--ink-soft);cursor:pointer;text-align:left;text-decoration:none;">← LIBRARY</a>
             <span class="rt-title">{readerData.title.toUpperCase()}</span>
             <span class="tools">
+              <button data-action="theme" title="Theme">☀</button>
               <button data-action="font" title="Font size">Aa</button>
               <button data-action="focus" title="Full screen">⤢</button>
             </span>
@@ -137,6 +138,25 @@ const readerData = openPost
     void flash.offsetWidth;
     flash.classList.add('go');
   }
+
+  // Theme cycling (sepia -> white -> dark), synced with nav swatches
+  const themeOrder = ['sepia', 'white', 'dark'];
+  document.querySelectorAll('[data-action="theme"]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'sepia';
+      const next = themeOrder[(themeOrder.indexOf(current) + 1) % themeOrder.length];
+      if (next === 'sepia') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', next);
+      }
+      localStorage.setItem('iis-theme', next);
+      // Sync nav swatch buttons
+      document.querySelectorAll('.theme-sw button').forEach((b) => {
+        b.classList.toggle('on', b.getAttribute('data-theme-set') === next);
+      });
+    });
+  });
 
   // Font size cycling
   const sizes = ['1.06rem', '1.21rem', '1.37rem'];

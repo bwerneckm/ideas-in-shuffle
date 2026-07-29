@@ -8,8 +8,6 @@ excerpt: "Base, Arc, Tempo: Who really controls your &#8216;decentralised&#8217;
 cover: "beeswax"
 ---
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/25372e1d-365e-4330-a307-a9e654fafc46_2816x1536.png)
-
 Chris Dixon’s “Read, Write, Own” gave us a framework everyone loves to cite: the attract-extract cycle. Platforms pour money into growth, cultivate
 
 network effects, then flip the script—extracting value from the same users who made them valuable. Facebook perfected it. Google institutionalised it. Visa and Mastercard turned it into a $500 billion business model.
