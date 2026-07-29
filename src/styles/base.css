@@ -396,6 +396,7 @@ body.focus .screen { height: 94dvh !important; border-radius: 10px !important; }
 /* ---------- Book cover (the only colored element) ---------- */
 .book {
   position: relative;
+  min-width: 0;
   aspect-ratio: 3 / 3.9;
   border-radius: 3px 9px 9px 3px;
   padding: 18px 16px 16px 24px;
@@ -444,6 +445,8 @@ body.focus .screen { height: 94dvh !important; border-radius: 10px !important; }
   letter-spacing: 0.03em;
   line-height: 1.32;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  hyphens: auto;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
@@ -707,7 +710,7 @@ body.focus .screen { height: 94dvh !important; border-radius: 10px !important; }
     height: min(76dvh, 800px);
   }
   .shelf {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .intro h1 { font-size: 52px; }
   .intro .blurb { display: block; }
@@ -749,7 +752,7 @@ body.focus .screen { height: 94dvh !important; border-radius: 10px !important; }
     border-radius: 10px;
     height: min(82dvh, 860px);
   }
-  .shelf { grid-template-columns: repeat(4, 1fr); }
+  .shelf { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .intro h1 { font-size: clamp(44px, 4.4vw, 64px); }
   .article { padding: 28px 44px 140px; }
 }
