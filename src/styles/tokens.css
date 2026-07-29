@@ -72,13 +72,13 @@
   --c-seafoam: #6FA398;
   --c-bone: #EFE3C4;
 
-  /* Cover color -> text color mapping */
-  --c-darlington-ink: #D44720;
-  --c-beeswax-ink: #786147;
-  --c-grenadine-ink: #EFE3C4;
-  --c-cafelatte-ink: #E9A752;
-  --c-seafoam-ink: #EFE3C4;
-  --c-bone-ink: #D44720;
+  /* Cover text: only dark or light, chosen by cover luminance */
+  --c-darlington-ink: #1A1A17;   /* light bg -> dark text */
+  --c-beeswax-ink: #1A1A17;      /* light bg -> dark text */
+  --c-grenadine-ink: #EFE3C4;    /* dark bg -> light text */
+  --c-cafelatte-ink: #EFE3C4;    /* dark bg -> light text */
+  --c-seafoam-ink: #EFE3C4;      /* dark bg -> light text */
+  --c-bone-ink: #1A1A17;         /* light bg -> dark text */
 }
 
 /* ---------- Typography stacks ---------- */
