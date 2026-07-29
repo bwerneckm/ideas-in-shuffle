@@ -662,36 +662,6 @@ body.focus .screen { height: 94dvh !important; border-radius: 10px !important; }
 .turn.prev { left: 0; }
 .turn.next { right: 0; }
 
-/* ---------- Reader bottom (progress) ---------- */
-.reader-bottom {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  z-index: 20;
-  padding: 14px 24px 11px;
-  background: linear-gradient(transparent, var(--screen-bg) 45%);
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.16em;
-  color: var(--ink-faint);
-}
-.reader-bottom .pbar {
-  height: 2px;
-  background: var(--hairline);
-  margin-bottom: 7px;
-  position: relative;
-}
-.reader-bottom .pbar i {
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  background: var(--ink);
-  width: 0%;
-  transition: width 0.3s ease;
-}
-.reader-bottom .prow {
-  display: flex;
-  justify-content: space-between;
-}
-
 /* ============================================================
    Responsive: Kindle (medium / vertical-ish)
    ============================================================ */

@@ -89,14 +89,6 @@ const readerData = openPost
             <div class="a-meta">BRENO MAXIMIANO · {readerData.date} · {readerData.readMinutes} MIN</div>
             <slot />
           </article>
-
-          <div class="reader-bottom">
-            <div class="pbar"><i id="pfill"></i></div>
-            <div class="prow">
-              <span id="ppct">0% READ</span>
-              <span id="pleft">{readerData.readMinutes} MIN LEFT</span>
-            </div>
-          </div>
         </div>
       )}
 
