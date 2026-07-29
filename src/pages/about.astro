@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+---
+
+<BaseLayout title="About — Ideas in Shuffle" description="About Breno Maximiano and Ideas in Shuffle.">
+  <div class="stage">
+    <SiteNav active="about" />
+
+    <section class="intro" style="padding-top: 10dvh;">
+      <h1>About</h1>
+      <p class="tagline" style="margin-bottom: 32px;">BRENO MAXIMIANO</p>
+      <div class="blurb" style="max-width: 56ch; text-align: left; margin: 0 auto; font-family: var(--serif); font-size: 17px; line-height: 1.7; color: var(--chrome-dim);">
+        <p style="margin-bottom: 1.5em;">
+          I am a Brazilian fintech founder. I raised venture capital and returned it.
+          Now I am bootstrapping, building in public, and writing about the things I
+          work on: AI agents, payments infrastructure, stablecoins, and the business
+          of technology.
+        </p>
+        <p style="margin-bottom: 1.5em;">
+          This blog is my library. Some essays are long, some are short. Most are about
+          fintech and AI, but occasionally an endurance or sports entry sneaks in.
+          Published in English and Portuguese, depending on where each idea was born.
+        </p>
+        <p>
+          You can find me on <a href="https://www.linkedin.com/in/brenomaximiano" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">LinkedIn</a>,
+          or reach me at <a href="mailto:hello@ideasinshuffle.com" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">hello@ideasinshuffle.com</a>.
+        </p>
+      </div>
+    </section>
+
+    <footer class="site-foot" style="margin-top: auto;">
+      <span>© {new Date().getFullYear()} BRENO MAXIMIANO</span>
+      <span>
+        <a href="/rss.xml">RSS</a>
+        <a href="https://www.linkedin.com/in/brenomaximiano" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="mailto:hello@ideasinshuffle.com">EMAIL</a>
+      </span>
+    </footer>
+  </div>
+</BaseLayout>

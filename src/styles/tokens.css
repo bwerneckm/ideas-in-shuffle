@@ -1,0 +1,106 @@
+/* ============================================================
+   Ideas in Shuffle — Design Tokens
+   Three themes: sepia (default) / white / dark
+   Palette (covers only): Darlington, Beeswax, Grenadine,
+   Cafe Latte, Seafoam, Bone
+   ============================================================ */
+
+/* ---------- Theme: Sepia (default) ---------- */
+:root,
+[data-theme="sepia"] {
+  --bg: #F1EEE6;
+  --chrome-ink: #23211D;
+  --chrome-dim: rgba(35, 33, 29, 0.60);
+  --chrome-faint: rgba(35, 33, 29, 0.38);
+  --chrome-line: rgba(35, 33, 29, 0.16);
+  --device-body: #1A1A17;
+  --device-brand: rgba(241, 238, 230, 0.28);
+  --device-shadow: 0 44px 90px rgba(35, 33, 29, 0.30), 0 6px 18px rgba(35, 33, 29, 0.18);
+  --screen-bg: #F1EEE6;
+  --ink: #23211D;
+  --ink-soft: #5B574E;
+  --ink-faint: #8E897D;
+  --hairline: rgba(35, 33, 29, 0.16);
+  --hl: #F2D45C;
+  --hl-ink: #23211D;
+}
+
+/* ---------- Theme: White ---------- */
+[data-theme="white"] {
+  --bg: #FAF9F6;
+  --chrome-ink: #23211D;
+  --chrome-dim: rgba(35, 33, 29, 0.60);
+  --chrome-faint: rgba(35, 33, 29, 0.38);
+  --chrome-line: rgba(35, 33, 29, 0.14);
+  --device-body: #1A1A17;
+  --device-brand: rgba(241, 238, 230, 0.28);
+  --device-shadow: 0 44px 90px rgba(35, 33, 29, 0.22), 0 6px 18px rgba(35, 33, 29, 0.12);
+  --screen-bg: #FAF9F6;
+  --ink: #23211D;
+  --ink-soft: #5B574E;
+  --ink-faint: #8E897D;
+  --hairline: rgba(35, 33, 29, 0.14);
+  --hl: #F2D45C;
+  --hl-ink: #23211D;
+}
+
+/* ---------- Theme: Dark ---------- */
+[data-theme="dark"] {
+  --bg: #1A1A17;
+  --chrome-ink: #EDE9DC;
+  --chrome-dim: rgba(237, 233, 220, 0.58);
+  --chrome-faint: rgba(237, 233, 220, 0.34);
+  --chrome-line: rgba(237, 233, 220, 0.16);
+  --device-body: #EAE5D7;
+  --device-brand: rgba(26, 26, 23, 0.40);
+  --device-shadow: 0 44px 90px rgba(0, 0, 0, 0.55), 0 6px 18px rgba(0, 0, 0, 0.4);
+  --screen-bg: #1A1A17;
+  --ink: #DAD6C9;
+  --ink-soft: #9B968A;
+  --ink-faint: #66625A;
+  --hairline: rgba(218, 214, 201, 0.16);
+  --hl: rgba(242, 212, 92, 0.30);
+  --hl-ink: #EDE9DC;
+}
+
+/* ---------- Cover palette (covers only, never on chrome/screen) ---------- */
+:root {
+  --c-darlington: #ACCA92;
+  --c-beeswax: #E9A752;
+  --c-grenadine: #D44720;
+  --c-cafelatte: #786147;
+  --c-seafoam: #6FA398;
+  --c-bone: #EFE3C4;
+
+  /* Cover color -> text color mapping */
+  --c-darlington-ink: #D44720;
+  --c-beeswax-ink: #786147;
+  --c-grenadine-ink: #EFE3C4;
+  --c-cafelatte-ink: #E9A752;
+  --c-seafoam-ink: #EFE3C4;
+  --c-bone-ink: #D44720;
+}
+
+/* ---------- Typography stacks ---------- */
+:root {
+  --serif: "Spectral", Georgia, "Times New Roman", serif;
+  --sans: "Archivo", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", "SF Mono", "Courier New", monospace;
+}
+
+/* ---------- Spacing scale (8px base) ---------- */
+:root {
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-5: 48px;
+  --sp-6: 64px;
+}
+
+/* ---------- Transitions ---------- */
+:root {
+  --t-theme: 0.45s ease;
+  --t-device: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  --t-hover: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}

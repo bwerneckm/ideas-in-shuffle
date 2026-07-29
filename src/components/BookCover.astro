@@ -1,0 +1,19 @@
+---
+import { formatDateShort } from '../lib/posts';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  readMinutes: number;
+}
+
+const { post, readMinutes } = Astro.props;
+const { title, slug, tag, cover, date } = post.data;
+const href = `/p/${slug}`;
+---
+
+<a class={`book cv-${cover}`} href={href}>
+  <h3>{title}</h3>
+  <div class="meta">{formatDateShort(date)}&nbsp;&nbsp;{tag.toUpperCase()}&nbsp;&nbsp;{readMinutes} MIN</div>
+  <span class="author">B. MAXIMIANO</span>
+</a>

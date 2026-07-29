@@ -1,0 +1,46 @@
+---
+// Site navigation with theme switcher
+const { active = 'writing' } = Astro.props;
+---
+
+<nav class="site-nav">
+  <span class="theme-sw" role="group" aria-label="Theme">
+    <button class="sw-sepia on" data-theme-set="sepia" title="Sepia"></button>
+    <button class="sw-white" data-theme-set="white" title="White"></button>
+    <button class="sw-dark" data-theme-set="dark" title="Dark"></button>
+  </span>
+  <a href="/" class={active === 'writing' ? 'on' : ''}>WRITING</a>
+  <a href="/about" class={active === 'about' ? 'on' : ''}>ABOUT</a>
+  <a href="/rss.xml" class="cta">SUBSCRIBE</a>
+</nav>
+
+<script>
+  // Theme switching (global, persists across pages)
+  const buttons = document.querySelectorAll('.theme-sw button');
+  const root = document.documentElement;
+
+  // Sync button state with current theme
+  function syncButtons(theme: string) {
+    buttons.forEach((b) => {
+      b.classList.toggle('on', b.getAttribute('data-theme-set') === theme);
+    });
+  }
+
+  // Init from saved theme
+  const saved = localStorage.getItem('iis-theme') || 'sepia';
+  if (saved !== 'sepia') root.setAttribute('data-theme', saved);
+  syncButtons(saved);
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const theme = btn.getAttribute('data-theme-set') || 'sepia';
+      if (theme === 'sepia') {
+        root.removeAttribute('data-theme');
+      } else {
+        root.setAttribute('data-theme', theme);
+      }
+      localStorage.setItem('iis-theme', theme);
+      syncButtons(theme);
+    });
+  });
+</script>

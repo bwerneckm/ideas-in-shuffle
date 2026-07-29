@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import Device from '../components/Device.astro';
+import { getSortedPosts, estimateReadTime } from '../lib/posts';
+
+const posts = await getSortedPosts();
+const latest = posts[0];
+const latestReadTime = latest.data.readMinutes || estimateReadTime(latest.body);
+---
+
+<BaseLayout title="Ideas in Shuffle" description="Thoughts and ideas in shuffle mode. Essays on fintech infrastructure, AI tooling and business.">
+  <div class="stage">
+    <SiteNav active="writing" />
+
+    <section class="intro">
+      <h1>Ideas in <em>Shuffle</em></h1>
+      <p class="tagline">THOUGHTS AND IDEAS IN SHUFFLE MODE</p>
+      <p class="blurb">
+        Essays on fintech infrastructure, AI tooling and business, with the occasional
+        endurance entry. Published in English and Portuguese, depending on where each
+        idea was born.
+      </p>
+
+      <!-- Continue reading card is rendered by Device component when not in reader mode -->
+    </section>
+
+    <Device />
+
+    <footer class="site-foot">
+      <span>© {new Date().getFullYear()} BRENO MAXIMIANO</span>
+      <span>
+        <a href="/rss.xml">RSS</a>
+        <a href="https://www.linkedin.com/in/brenomaximiano" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="mailto:hello@ideasinshuffle.com">EMAIL</a>
+      </span>
+    </footer>
+  </div>
+</BaseLayout>

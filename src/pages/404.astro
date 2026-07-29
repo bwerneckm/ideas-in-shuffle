@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+---
+
+<BaseLayout title="Not found — Ideas in Shuffle">
+  <div class="stage">
+    <SiteNav active="" />
+    <section class="intro" style="padding-top: 15dvh;">
+      <h1>404</h1>
+      <p class="tagline">PAGE NOT IN THIS LIBRARY</p>
+      <p class="blurb" style="margin-top: 20px;">
+        The page you are looking for is not on this shelf.
+      </p>
+      <a href="/" style="display: inline-block; margin-top: 28px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; color: var(--chrome-ink); border: 1px solid var(--chrome-line); border-radius: 999px; padding: 10px 20px; text-decoration: none; transition: background 0.2s ease;" onmouseover="this.style.background='var(--chrome-ink)';this.style.color='var(--bg)'" onmouseout="this.style.background='';this.style.color='var(--chrome-ink)'">
+        ← BACK TO LIBRARY
+      </a>
+    </section>
+    <footer class="site-foot" style="margin-top: auto;">
+      <span>© {new Date().getFullYear()} BRENO MAXIMIANO</span>
+      <span><a href="/rss.xml">RSS</a></span>
+    </footer>
+  </div>
+</BaseLayout>

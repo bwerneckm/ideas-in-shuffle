@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import Device from '../../components/Device.astro';
+import { getCollection, render } from 'astro:content';
+import { formatDate, estimateReadTime } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} — Ideas in Shuffle`} description={post.data.excerpt}>
+  <div class="stage">
+    <SiteNav active="writing" />
+
+    <section class="intro" style="padding: 3dvh 20px 2dvh;">
+      <h1 style="font-size: clamp(28px, 3vw, 40px);">Ideas in <em>Shuffle</em></h1>
+      <p class="tagline">THOUGHTS AND IDEAS IN SHUFFLE MODE</p>
+    </section>
+
+    <Device openPost={post}>
+      <Content />
+    </Device>
+
+    <footer class="site-foot">
+      <span>© {new Date().getFullYear()} BRENO MAXIMIANO</span>
+      <span>
+        <a href="/rss.xml">RSS</a>
+        <a href="https://www.linkedin.com/in/brenomaximiano" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="mailto:hello@ideasinshuffle.com">EMAIL</a>
+      </span>
+    </footer>
+  </div>
+</BaseLayout>

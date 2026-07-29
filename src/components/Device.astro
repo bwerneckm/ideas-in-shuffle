@@ -1,0 +1,214 @@
+---
+import { getSortedPosts, getTagCounts, estimateReadTime, formatDate, formatDateShort } from '../lib/posts';
+import BookCover from './BookCover.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  openPost?: CollectionEntry<'posts'>;
+}
+
+const { openPost } = Astro.props;
+const posts = await getSortedPosts();
+const tagCounts = await getTagCounts();
+const allTags = ['All', 'Fintech', 'AI', 'Business', 'Endurance'];
+const latest = posts[0];
+const latestReadTime = latest.data.readMinutes || estimateReadTime(latest.body);
+
+const tagCountsDisplay: Record<string, number> = { All: posts.length, ...tagCounts };
+
+const isReader = !!openPost;
+const readerData = openPost
+  ? {
+      title: openPost.data.title,
+      tag: openPost.data.tag,
+      date: formatDate(openPost.data.date),
+      slug: openPost.data.slug,
+      readMinutes: openPost.data.readMinutes || estimateReadTime(openPost.body),
+    }
+  : null;
+---
+
+<div class="device-wrap">
+  <div class="device" id="device">
+    <div class="screen" id="screen">
+
+      <div class="flash" id="flash"></div>
+
+      <!-- ============ LIBRARY VIEW ============ -->
+      <div class={`view ${!isReader ? 'on' : ''}`} id="view-lib">
+        <div class="statusbar">
+          <span>LIBRARY</span>
+          <span class="r">
+            <span id="clock">--:--</span>
+            <span id="battery"></span>
+          </span>
+        </div>
+
+        <div class="lib-head">
+          <h2>Your library</h2>
+          <span>{posts.length} VOLUMES</span>
+        </div>
+
+        <div class="collections">
+          {allTags.map((t) => (
+            <button class={t === 'All' ? 'on' : ''} data-tag={t}>
+              {t.toUpperCase()}<span class="n" style="margin-left:5px;opacity:0.55">{tagCountsDisplay[t] || 0}</span>
+            </button>
+          ))}
+        </div>
+
+        <div class="shelf">
+          {posts.map((post) => (
+            <BookCover post={post} readMinutes={post.data.readMinutes || estimateReadTime(post.body)} />
+          ))}
+        </div>
+
+        <div class="lib-foot">
+          <span>EN + PT</span>
+          <span>SORTED BY RECENT</span>
+        </div>
+      </div>
+
+      <!-- ============ READER VIEW ============ -->
+      {isReader && readerData && (
+        <div class="view on" id="view-reader" data-reader>
+          <div class="reader-top">
+            <a href="/" class="back" style="background:none;border:none;font:inherit;color:var(--ink-soft);cursor:pointer;text-align:left;text-decoration:none;">← LIBRARY</a>
+            <span class="rt-title">{readerData.title.toUpperCase()}</span>
+            <span class="tools">
+              <button data-action="font" title="Font size">Aa</button>
+              <button data-action="focus" title="Full screen">⤢</button>
+            </span>
+          </div>
+
+          <button class="turn prev" data-action="prev" aria-label="Previous page">‹</button>
+          <button class="turn next" data-action="next" aria-label="Next page">›</button>
+
+          <article class="article" id="article">
+            <span class="a-kicker">{readerData.tag.toUpperCase()}</span>
+            <h1>{readerData.title}</h1>
+            <div class="a-meta">BRENO MAXIMIANO · {readerData.date} · {readerData.readMinutes} MIN</div>
+            <slot />
+          </article>
+
+          <div class="reader-bottom">
+            <div class="pbar"><i id="pfill"></i></div>
+            <div class="prow">
+              <span id="ppct">0% READ</span>
+              <span id="pleft">{readerData.readMinutes} MIN LEFT</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+    </div>
+    <div class="chin">IDEAS IN SHUFFLE</div>
+  </div>
+</div>
+
+<!-- Continue reading card (outside device, on intro) -->
+{!isReader && (
+  <a class="continue-card" href={`/p/${latest.data.slug}`} style="text-decoration:none;color:inherit;">
+    <div class="mini">
+      <span>{latest.data.title}</span>
+      <i>B. MAXIMIANO</i>
+    </div>
+    <div>
+      <label>CONTINUE READING</label>
+      <h3>{latest.data.title}</h3>
+      <div class="bar"><i style="width:34%"></i></div>
+      <small>34% READ · {latestReadTime} MIN LEFT</small>
+    </div>
+    <span class="go">→</span>
+  </a>
+)}
+
+<script>
+  // Device interaction script
+  const screen = document.getElementById('screen');
+  const flash = document.getElementById('flash');
+  const lib = document.getElementById('view-lib');
+  const reader = document.getElementById('view-reader');
+  const focusbtn = document.querySelector('[data-action="focus"]');
+
+  function doFlash() {
+    if (!flash) return;
+    flash.classList.remove('go');
+    void flash.offsetWidth;
+    flash.classList.add('go');
+  }
+
+  // Font size cycling
+  const sizes = ['1.06rem', '1.21rem', '1.37rem'];
+  let fi = 0;
+  document.querySelectorAll('[data-action="font"]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      fi = (fi + 1) % sizes.length;
+      const article = document.getElementById('article');
+      if (article) article.style.setProperty('--fs', sizes[fi]);
+    });
+  });
+
+  // Fullscreen reading
+  function toggleFocus() {
+    const on = document.body.classList.toggle('focus');
+    if (focusbtn) {
+      focusbtn.textContent = on ? '▯' : '⤢';
+      focusbtn.setAttribute('title', on ? 'Back to device' : 'Full screen');
+    }
+    if (on) {
+      document.getElementById('device')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+  document.querySelectorAll('[data-action="focus"]').forEach((btn) => {
+    btn.addEventListener('click', toggleFocus);
+  });
+
+  // Page turn
+  document.querySelectorAll('[data-action="prev"]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      reader?.scrollBy({ top: -reader.clientHeight * 0.86, behavior: 'smooth' });
+    });
+  });
+  document.querySelectorAll('[data-action="next"]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      reader?.scrollBy({ top: reader.clientHeight * 0.86, behavior: 'smooth' });
+    });
+  });
+
+  // Filter chips
+  document.querySelectorAll('.collections button').forEach((c) => {
+    c.addEventListener('click', () => {
+      document.querySelectorAll('.collections button').forEach((x) => x.classList.remove('on'));
+      c.classList.add('on');
+      const tag = c.getAttribute('data-tag');
+      document.querySelectorAll('.book').forEach((b) => {
+        const bookTag = b.querySelector('.meta')?.textContent || '';
+        if (tag === 'All' || bookTag.toUpperCase().includes((tag || '').toUpperCase())) {
+          (b as HTMLElement).style.display = '';
+        } else {
+          (b as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Clock
+  function tick() {
+    const d = new Date();
+    const clock = document.getElementById('clock');
+    if (clock) {
+      clock.textContent = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+    }
+  }
+  tick();
+  setInterval(tick, 30000);
+
+  // Battery
+  if (navigator.getBattery) {
+    navigator.getBattery().then((b) => {
+      const bat = document.getElementById('battery');
+      if (bat) bat.textContent = Math.round(b.level * 100) + '%';
+    }).catch(() => {});
+  }
+</script>
