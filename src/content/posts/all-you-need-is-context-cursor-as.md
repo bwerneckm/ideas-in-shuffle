@@ -10,7 +10,7 @@ cover: "darlington"
 
 That’s the lesson hiding in plain sight across every AI tool that actually works. Not features, not models, not speed. Context.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/c4840462-805e-4751-ae5e-48258577a311_536x203.jpeg)
+![](/images/posts/c4840462_536x203.jpeg)
 
 Cursor proved this for code. AI browsers are trying to prove it for the web. But most are missing the critical piece that makes context management actually work, and ironically, Arc had already solved it before pivoting to Dia.
 
@@ -18,7 +18,7 @@ Cursor proved this for code. AI browsers are trying to prove it for the web. But
 
 Look at Cursor’s interface. Three zones, each serving a distinct purpose:
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/d9e63c83-0bb4-4bb0-98aa-ee83a9446157_2524x1578.jpeg)
+![](/images/posts/d9e63c83_2524x1578.jpeg)
 
 **Left: knowledge structure.** Folders, files, Git branches. This isn’t decoration—it’s your spatial map. You see where everything lives. You navigate by location, not search. The structure persists across sessions, so you build muscle memory for where things are.
 
@@ -50,7 +50,7 @@ The structure makes sense. But they’re missing something critical: **context m
 
 ## What Arc got right (and then abandoned)
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/50e754b8-27c0-48b6-8ddf-e3b8e57edce2_1653x959.png)
+![](/images/posts/50e754b8_1653x959.png)
 
 Here’s the irony: Arc had solved context management for browsers before the AI era made it even more important.
 
@@ -68,7 +68,7 @@ I understand why they pivoted to Dia. Simplification for mass adoption. Solving 
 
 But in chasing simplification, they’re abandoning the feature that mattered most—especially now, in the AI era.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/9539f806-4060-4077-b18c-7e271bbf2b4f_2498x1477.jpeg)
+![](/images/posts/9539f806_2498x1477.jpeg)
 
 When you’re working with AI assistance in a browser, context management becomes critical. You’re not just browsing one page. You’re referencing multiple sources, comparing articles, indexing research, and asking the AI to synthesise information across tabs. If your tabs are a flat, unsorted mess, the AI can’t help you. There’s no structure to reference.
 

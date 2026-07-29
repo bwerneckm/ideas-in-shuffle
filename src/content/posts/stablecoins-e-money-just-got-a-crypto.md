@@ -8,7 +8,7 @@ excerpt: "How stablecoins are changing the payments landscape under our nose."
 cover: "cafelatte"
 ---
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/3eb54cb4-685d-42b0-9e52-8e9df9c7fca2_1769x1256.jpeg)
+![](/images/posts/3eb54cb4_1769x1256.jpeg)
 
 Since my first contact with the concept of e-money, I have been frustrated with it. To be honest with you, I couldn’t explain why until recently. Something about the regulatory burden of trying to describe and define all types of exchanges between parties seemed like an impossible task. Even more intriguing was that the name was pretty good – e-money is an electronic form of money, as e-mail is an electronic form of mail or e-commerce of commerce – it made more sense than the concept itself. It should be that e-money works just like cash in a digital world. A central authority issues it, has a set of parameters for verification purposes, has nominal value, serves as a payment instrument and after issuance, it’s free to circulate in the economy with few questions asked. Well, not exactly. But that was not the concept at first.
 

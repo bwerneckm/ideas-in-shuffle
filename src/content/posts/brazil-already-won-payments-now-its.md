@@ -8,7 +8,7 @@ excerpt: "Why Brazil should abandon Drex and regulate tokenised assets instead"
 cover: "cafelatte"
 ---
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/2ea1aa01-29e2-40b4-b3f9-5c951f0b31cb_1024x1024.png)
+![](/images/posts/2ea1aa01_1024x1024.png)
 
 Brazil processes more instant payments in a month than the US does in a year through a system that’s existed for 50 years. Pix hit 6.4 billion transactions in December 2024 alone—80% more than credit and debit cards combined. Over 160 million Brazilians send money instantly, for free, 24/7.
 

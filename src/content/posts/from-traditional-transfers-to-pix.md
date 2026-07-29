@@ -8,7 +8,7 @@ excerpt: "A three part series into the details of a infrastructure revolution in
 cover: "beeswax"
 ---
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/9bef908b-1fd5-43ba-9936-0178d98c0170_1024x742.png)
+![](/images/posts/9bef908b_1024x742.png)
 
 After deciding to leave my last job, I started talking to many companies and investors in the UK and Europe to explore new opportunities and think about my next big step. Whenever I told my story and spoke about the products I built or the changes we promoted in the Brazilian market through Stone’s policymaking team, one topic always came up as a unanimous interest: **Pix, the Brazilian Fast Payments** system that took over the country by storm. Its adoption rate makes it one of the world’s most successful implementations of any payment system. However, I have a specific perspective on its success and the elements contributing to this outcome. So, I decided this was a great moment to start a personal blog, helping me organise my thoughts and explain more in-depth how the payments landscape has evolved in the country during the last decade.
 

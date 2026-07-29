@@ -8,7 +8,7 @@ excerpt: "Before diving into the state of the Brazilian payment landscape leadin
 cover: "grenadine"
 ---
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/b70c80f5-3f21-4d87-9934-a99281ea9f96_1024x1024.png)
+![](/images/posts/b70c80f5_1024x1024.png)
 
 Before diving into the state of the Brazilian payment landscape leading to the introduction of Pix, it’s essential to understand the various components that make up a payment ecosystem. Each component plays a distinct role, often intertwined, to ensure the smooth functioning of the system. In this specific case, understanding the complex set of incentives created through card schemes, bank conventions, and other dynamics is a key element to solving the puzzle of ‘what made Pix such a tremendous success’.
 
@@ -50,7 +50,7 @@ Example of 3 TEDs sent using STR:
 2. User B sending R$ 50 from bank B to user C in bank C.
 3. User C sending R$ 30 from bank C to user A in bank A.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/c0bc2e95-d4ea-45a7-9c91-b00121c0d44b_1024x417.jpeg)
+![](/images/posts/c0bc2e95_1024x417.jpeg)
 
 ### **SITRAF – Funds Transfer System: A 2nd Layer Infrastructure. Redundancy For What?**
 
@@ -67,7 +67,7 @@ Example of 3 TEDs sent using SITRAF:
 3. User C sending R$ 30 from bank C to user A in bank A.
 4. Transactions are calculated in SITRAF and the resulting net position bank B needs to send R$ 20 to bank C.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/8f3db67c-05fe-41a5-b785-d05f552a3f48_1024x574.jpeg)
+![](/images/posts/8f3db67c_1024x574.jpeg)
 
 ## **Introducing Payment Institutions in STR**
 
@@ -101,7 +101,7 @@ Additionally, Boletos can include other terms and conditions, such as discounts 
 
 The adaptability of Boletos makes them suitable for various purposes, such as paying bills, purchasing goods, or even making loan payments. The ability to embed complex terms within a simple payment slip has turned Boletos into a versatile and widely accepted form of payment nationwide. Whether paid online, through a mobile app, or at a physical location, the Boleto system ensures a consistent and comprehensive payment experience, reflecting the multifaceted nature of financial transactions in modern Brazil.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/4fe0e0b9-db07-4a4b-8ec5-332b696bceef_682x407.png)
+![](/images/posts/4fe0e0b9_682x407.png)
 
 ### **SILOC**
 
@@ -127,8 +127,8 @@ After diving into the different pieces of this puzzle, it’s nice to look at th
 - **Layer 2 – The payment schemes** – with their guidelines, networks, authorisation systems and institutions.
 - **Layer 3 – Market participants** – mainly banks and payment institutions.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/c07a55ca-1ea3-4431-ae54-95b4d7645542_1024x600.jpeg)
+![](/images/posts/c07a55ca_1024x600.jpeg)
 
 A second snapshot shows the addition of SLC – Sistema de Liquidacao de Cartoes – another piece of infrastructure created by CIP and made mandatory by the Central Bank for the settlement of card transactions. SLC was just a clearing layer to calculate the net position of all participants in the card schemes, using SILOC underneath to finalise the settlement process. The system went live in 2017, replacing legacy clearing houses from Visanet and Redecard.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/7172c326-fc7f-4dac-9b8c-d0528c7b196f_896x530.jpeg)
+![](/images/posts/7172c326_896x530.jpeg)

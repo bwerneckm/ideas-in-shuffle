@@ -32,7 +32,7 @@ The architecture I built has four layers:
 
 This isn’t a metaphor. I literally use an IDE as my note-taking interface. The system treats knowledge like code: versioned, searchable, refactorable at scale.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/273a0633-6c02-4ed9-a3b0-c91e6c770dcd_2550x1386.png)
+![](/images/posts/273a0633_2550x1386.png)
 
 ## The Folder Taxonomy
 

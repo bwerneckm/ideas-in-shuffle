@@ -8,7 +8,7 @@ excerpt: "From Traditional Transfers to Pix: Understanding Brazil's Payment Revo
 cover: "grenadine"
 ---
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/3f156792-c792-4b3e-a087-ed6235ad8352_1024x1024.png)
+![](/images/posts/3f156792_1024x1024.png)
 
 > If you haven’t, read the 1st part of this series here: [Beyond Cards and Codes: Unraveling Brazil's Pre-Pix Payment Maze.](https://substack.com/@bmaxblog/p-149266560)
 
@@ -55,7 +55,7 @@ The final approach is, in my opinion, one of the strengths of PIX’s success ov
 
 This is what the new high-level architecture looks like after the SPI and DICT introduction.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/672fe4b1-5feb-49f3-94a5-947ec9c8a136_1024x570.jpeg)
+![](/images/posts/672fe4b1_1024x570.jpeg)
 
 I highlighted the Payment Institution E and Indirect Participant, accessing SPI through Bank C. To make this happen, Bank C would have to offer a transactional account with specific API functionalities designed for Indirect Participants. In this case, Payment Institution E exists in the PIX scheme, has its identifier and can be found by other institutions, but all its transactions are sent and settled through Bank C.
 
@@ -68,7 +68,7 @@ This is how a set of transactions would look like:
 - Customer C (from Bank C) sends R$ 100 to customer D (in PI D) via PIX
 - Customer E (from PI E) sends R$ 200 to customer A (in Bank A) via PIX
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/6a863cf1-aff7-4332-994c-6b6b9b2c9411_1019x591.jpeg)
+![](/images/posts/6a863cf1_1019x591.jpeg)
 
 ```
 Real-Time Transactions Everywhere, Anytime…
@@ -135,7 +135,7 @@ Let’s detail the roles to make it clearer to our readers:
 
 Here, you can see the difference between PIX, where the Central Bank plays multiple roles at once, and a Private Card Scheme, where multiple institutions are playing different roles:
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/ccc49a35-02dc-4f9b-861f-aa4d7a560d6b_1024x531.jpeg)
+![](/images/posts/ccc49a35_1024x531.jpeg)
 
 By playing these roles, the Central Bank guarantees Pix’s smooth functioning and instils public trust in the system. Their involvement ensures that Pix adheres to the highest security, reliability, and efficiency standards. Moreover, by being both the regulator and operator, the Central Bank is uniquely positioned to swiftly adapt and innovate the system as required.
 
@@ -167,7 +167,7 @@ To address these concerns, the Central Bank maintained stringent internal checks
 
 The final result is the incredible adoption seen in the last years, with PIX now accounting for more transactions than credit or debit cards.
 
-![](https://substack-post-media.s3.amazonaws.com/public/images/7c0d86fb-bd1f-4d63-a560-aaa4ec75c59a_980x829.jpeg)
+![](/images/posts/7c0d86fb_980x829.jpeg)
 
 *Source: Central Bank Dataset*
 
