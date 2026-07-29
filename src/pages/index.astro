@@ -22,7 +22,19 @@ const latestReadTime = latest.data.readMinutes || estimateReadTime(latest.body);
         idea was born.
       </p>
 
-      <!-- Continue reading card is rendered by Device component when not in reader mode -->
+      <a class="continue-card" href={`/p/${latest.data.slug}`}>
+        <div class="mini">
+          <span>{latest.data.title}</span>
+          <i>B. MAXIMIANO</i>
+        </div>
+        <div>
+          <label>CONTINUE READING</label>
+          <h3>{latest.data.title}</h3>
+          <div class="bar"><i style="width:34%"></i></div>
+          <small>34% READ · {latestReadTime} MIN LEFT</small>
+        </div>
+        <span class="go">→</span>
+      </a>
     </section>
 
     <Device />

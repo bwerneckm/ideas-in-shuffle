@@ -144,7 +144,6 @@ body.focus .site-foot { opacity: 0; pointer-events: none; }
   font-size: 7px;
   letter-spacing: 0.04em;
   line-height: 1.35;
-  text-transform: uppercase;
 }
 .continue-card .mini i {
   font-family: var(--mono);
@@ -442,9 +441,8 @@ body.focus .screen { height: 94dvh !important; border-radius: 10px !important; }
   font-family: var(--sans);
   font-weight: 800;
   font-size: 17px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0;
   line-height: 1.32;
-  text-transform: uppercase;
   overflow-wrap: break-word;
   hyphens: auto;
   display: -webkit-box;
