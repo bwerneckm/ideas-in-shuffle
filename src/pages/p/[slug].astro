@@ -17,7 +17,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={`${post.data.title} — Ideas in Shuffle`} description={post.data.excerpt}>
+<BaseLayout title={`${post.data.title} — Ideas in Shuffle`} description={post.data.excerpt} ogType="article">
   <div class="stage">
     <SiteNav active="writing" />
 
