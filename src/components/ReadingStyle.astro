@@ -1,0 +1,68 @@
+---
+const groups = [
+  { name: 'font', label: 'Font', options: [['spectral', 'Spectral'], ['georgia', 'Georgia'], ['archivo', 'Archivo']] },
+  { name: 'spacing', label: 'Vertical spacing', options: [['compact', 'Compact'], ['balanced', 'Balanced'], ['relaxed', 'Relaxed']] },
+  { name: 'width', label: 'Text width', options: [['narrow', 'Narrow'], ['standard', 'Standard'], ['wide', 'Wide']] },
+  { name: 'theme', label: 'Page tone', options: [['white', 'Light'], ['sepia', 'Paper'], ['dark', 'Dark']] },
+];
+---
+
+<div class="reading-style">
+  <button class="style-toggle" type="button" aria-label="Reading style" aria-expanded="false" aria-controls="reading-style-panel" aria-haspopup="dialog">Aa</button>
+  <div class="style-panel" id="reading-style-panel" role="dialog" aria-label="Reading style" hidden>
+    <div class="style-heading"><span>Reading style</span><button class="style-close" type="button">Done</button></div>
+    {groups.map(({ name, label, options }) => (
+      <fieldset>
+        <legend>{label}</legend>
+        <div class="style-options">
+          {options.map(([value, text]) => (
+            <button type="button" data-preference={name} data-value={value} aria-pressed="false">
+              {name === 'theme' && <span class={`tone-swatch tone-${value}`} aria-hidden="true" />}
+              {text}
+            </button>
+          ))}
+        </div>
+      </fieldset>
+    ))}
+  </div>
+</div>
+
+<script>
+  import { readerPreferences, validPreference, type Preference } from '../lib/reader-preferences';
+  const root = document.documentElement;
+  const toggle = document.querySelector<HTMLButtonElement>('.style-toggle');
+  const panel = document.querySelector<HTMLElement>('.style-panel');
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-preference]');
+  function sync() {
+    buttons.forEach((button) => {
+      const name = button.dataset.preference as Preference;
+      button.setAttribute('aria-pressed', String(button.dataset.value === validPreference(name, root.getAttribute(`data-${name}`))));
+    });
+  }
+  function setOpen(open: boolean, restoreFocus = false) {
+    if (!panel || !toggle) return;
+    panel.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) panel.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus({ preventScroll: true });
+    else if (restoreFocus) toggle.focus({ preventScroll: true });
+  }
+  sync();
+  toggle?.addEventListener('click', () => setOpen(panel?.hidden ?? true));
+  panel?.querySelector('.style-close')?.addEventListener('click', () => setOpen(false, true));
+  buttons.forEach((button) => button.addEventListener('click', () => {
+    const name = button.dataset.preference as Preference;
+    const value = validPreference(name, button.dataset.value ?? null);
+    root.setAttribute(`data-${name}`, value);
+    try { localStorage.setItem(readerPreferences[name].key, value); } catch { /* Preferences work without storage. */ }
+    sync();
+  }));
+  document.addEventListener('pointerdown', (event) => {
+    if (event.target instanceof Node && !panel?.hidden && !panel?.contains(event.target) && !toggle?.contains(event.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !panel?.hidden) { event.preventDefault(); setOpen(false, true); }
+  });
+  document.addEventListener('focusin', (event) => {
+    if (event.target instanceof Node && !panel?.hidden && !panel?.contains(event.target) && !toggle?.contains(event.target)) setOpen(false);
+  });
+</script>

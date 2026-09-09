@@ -3,13 +3,14 @@ import { getCollection } from 'astro:content';
 // Format date for display
 export function formatDate(date: Date): string {
   const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-  return `${String(date.getDate()).padStart(2, '0')} ${months[date.getMonth()]} ${date.getFullYear()}`;
+  // Frontmatter dates describe a calendar day, independent of the build timezone.
+  return `${String(date.getUTCDate()).padStart(2, '0')} ${months[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
 }
 
 // Format date short (MM.YY)
 export function formatDateShort(date: Date): string {
-  const m = String(date.getMonth() + 1).padStart(2, '0');
-  const y = String(date.getFullYear()).slice(2);
+  const m = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const y = String(date.getUTCFullYear()).slice(2);
   return `${m}.${y}`;
 }
 
