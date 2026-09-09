@@ -1,0 +1,13 @@
+---
+import { formatDate } from '../lib/posts';
+import type { CollectionEntry } from 'astro:content';
+interface Props { post: CollectionEntry<'posts'>; readMinutes: number; }
+const { post, readMinutes } = Astro.props;
+const { title, slug, tag, date, lang } = post.data;
+---
+<li class="essay-entry" data-tag={tag}>
+  <a href={`/p/${slug}`} data-post-link>
+    <h2>{title}</h2>
+    <div class="essay-meta"><time datetime={date.toISOString()}>{formatDate(date)}</time><span>{tag}</span><span>{readMinutes} min</span><span>{lang.toUpperCase()}</span></div>
+  </a>
+</li>
